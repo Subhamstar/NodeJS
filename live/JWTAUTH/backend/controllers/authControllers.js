@@ -83,7 +83,7 @@ const signIn=async(req,res)=>{
     
             res.cookie("token",token,cookieOption);
             res.status(200).json({
-                sucess:true,
+                success:true,
                 data:user
             })
     } catch (error) {
@@ -94,4 +94,25 @@ const signIn=async(req,res)=>{
     }
     
 }
-module.exports={signUp,signIn};
+
+
+
+
+const getUser=async(req,res)=>{
+    const userId=req.user.id;
+    try {
+        const user=await userModel.findById(userId);
+        return res.status(200).json({
+            status:true,
+            data:user
+        })
+    } catch (error) {
+        return res.status(400).json({
+            status:false,
+            message:error.message
+        })
+    }
+
+
+}
+module.exports={signUp,signIn,getUser};

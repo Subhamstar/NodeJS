@@ -19,7 +19,8 @@ const userSchema=new Schema({
     },
     password:{
         type:String,
-        required:[true,"password must be required"]
+        required:[true,"password must be required"],
+        select:false
     },
     forgetPasswordToken:{
         type:String,
