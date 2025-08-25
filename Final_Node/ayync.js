@@ -9,6 +9,9 @@ http.get("http://dummyjson.com/products/1",(res)=>{
 setTimeout(()=>{
     console.log("Data Fetch Successfully")
 },5000)
+setTimeout(()=>{
+    console.log("call imediately")
+},0)
 // console.log(fs,readFileSync("./text.txt","utf-8"));
 fs.readFile("./text.txt","utf8",(err,data)=>{
     console.log("File Data : ",data);
