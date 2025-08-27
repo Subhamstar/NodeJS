@@ -1,5 +1,6 @@
 {
   "type": "module",
+  
   "experimentalImports": {
     "json": true
   }
